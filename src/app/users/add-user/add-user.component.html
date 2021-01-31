@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col s8 offset-s2">
+            <div class="card">
+                <div class="card-image">
+                  <span class="card-title">Ajouter Utilisateur</span>
+                </div>
+                <form class="col s12 white" #AddUserForm="ngForm">
+                    <div class="row">
+                      <div class="input-field col s6">
+                          <input type="text" class="validate" name="nom" #nom="ngModel" [(ngModel)]="user.nom" required>
+                          <label>Nom</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <input type="text" class="validate" name="prenom" #prenom="ngModel" [(ngModel)]="user.prenom" required>
+                        <label>Prenom</label>
+                    </div>
+                      <div class="input-field col s6">
+                          <input type="text" class="validate" name="email" [(ngModel)]="user.email" required>
+                          <label>Email </label>
+                      </div>
+                      <div class="input-field col s6">
+                        <input type="password" class="validate" name="mdp" [(ngModel)]="user.mdp" required>
+                        <label>Mot de passe</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button class="btn-large btn-submit" (click)="addUser()">submit</button>
+                        </div>
+                    </div>
+                </form>
+              </div>
+            </div> 
+        </div>
+    </div>
+

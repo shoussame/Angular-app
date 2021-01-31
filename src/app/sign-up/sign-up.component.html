@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col s8 offset-s2">
+        <div class="col s12 m7">
+            <div class="card">
+              <div class="card-image">
+                <span class="card-title">Sign Up</span>
+              </div>
+              <form class="col s12 white" #UserRegistrationForm="ngForm">
+                  <div class="row">
+                      <div class="input-field col s6">
+                          <input type="text" class="validate" name="nom" #nom="ngModel" [(ngModel)]="user.nom" required>
+                          <label>Nom</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <input type="text" class="validate" name="prenom" #prenom="ngModel" [(ngModel)]="user.prenom" required>
+                        <label>Prenom</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="email" class="validate" name="email" #email="ngModel" [(ngModel)]="user.email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="password" class="validate" name="mdp" #mdp="ngModel" [(ngModel)]="user.mdp" required>
+                        <label>Mot de Passe</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="input-field col s12">
+                          <button class="btn-large btn-submit" (click)="addUser()">submit</button>
+                      </div>
+                  </div>
+              </form>
+            </div>
+          </div> 
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<br>
+
+<div class="container" *ngIf="!editedProf">
+    <div class="row" style="float: right;">
+        <div class="col-md-12" >
+            <button routerLink="/personnes/add" type="submit" class="btn btn-secondary ">Ajout Personnel</button>
+        </div>
+    </div>
+
+    <div *ngIf="!editedProf" class="row text-center text-white mb-5">
+        <div class="col-lg-7 mx-auto">
+            <h4 class="display-4">Personnel List</h4>
+        </div>
+    </div>
+    <div class="row" *ngIf="!editedProf">
+        <div class="col-lg-8 mx-auto">
+            <!-- List group-->
+            <ul class="list-group shadow">
+                <!-- list group item-->
+                <div *ngFor="let professeur of professeurs">
+                    
+                    <app-user-item (click)="editProfesseurEvent(professeur)" [user] = "professeur"></app-user-item>
+                </div>
+                
+            </ul> <!-- End -->
+        </div>
+    </div>
+
+
+    <app-edit-user *ngIf="editedProf"></app-edit-user>
+</div>
+
+
+<div class="container" *ngIf="editedProf">
+    <div class="row" style="float: left: -12;;">
+        <div class="col-md-12" >
+            <button (click)="editedProf=false;" type="submit" class="btn btn-success "><< Retour</button>
+        </div>
+    </div>
+    <br>
+    <app-edit-user [professeur]="professeur"></app-edit-user>
+</div>
